@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="figures/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">SigWavNet: Learning Multiresolution Signal Wavelet Network for Speech Emotion Recognition</h3>
