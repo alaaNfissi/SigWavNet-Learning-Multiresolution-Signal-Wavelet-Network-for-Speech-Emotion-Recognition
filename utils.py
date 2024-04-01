@@ -60,7 +60,6 @@ def load_data(data_path):
     data = pd.read_csv(data_path)
     data['label'] = data['label'].replace('exc', 'hap')
     data = data[data['label'].isin(['ang', 'hap', 'neu', 'sad'])].reset_index()
-    data['path'] = ['/home/alaa/Downloads/Concordia/TÉLUQ/ser/Explo_1/Ph.D/'+i for i in data['path']]
     del data['index']
     
     emotionclasses = sorted(list(data.label.unique()))
