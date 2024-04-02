@@ -4,7 +4,7 @@
 <br />
 
 <div align="center">
-  <a href="https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition">
+  <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition">
     <img src="figures/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -14,14 +14,14 @@
     This paper has been submitted for publication in IEEE Transactions on Affective Computing.
     <br />
    </p>
-   <!-- <a href="https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition"><strong>Explore the docs »</strong></a> -->
+   <!-- <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition"><strong>Explore the docs »</strong></a> -->
 </div>
    
 
   
 <div align="center">
 
-[![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](https://github.com/alaaNfissi/CNN-n-GRU-for-speech-emotion-recognition/#readme "Go to project documentation")
+[![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition/#readme "Go to project documentation")
 
 </div>  
 
@@ -29,9 +29,9 @@
 <div align="center">
     <p align="center">
     ·
-    <a href="https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition/issues">Report Bug</a>
+    <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition/issues">Report Bug</a>
     ·
-    <a href="https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition/issues">Request Feature</a>
+    <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition/issues">Request Feature</a>
   </p>
 </div>
 
@@ -108,9 +108,9 @@ The data preprocessing used in this study is provided in the `Data_exploration` 
 You can download a copy of all the files in this repository by cloning the
 [git](https://git-scm.com/) repository:
 
-    git clone https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition.git
+    git clone https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition.git
 
-or [download a zip archive](https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition/archive/refs/heads/main.zip).
+or [download a zip archive](https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition/archive/refs/heads/main.zip).
 
 ### Dependencies
 
@@ -135,7 +135,7 @@ Activate the environment, this will enable it for your current terminal session.
 ```sh 
     conda activate ser-env
  ``` 
-Use Pip to install packages to Anaconda Environment:
+Use Pip to install packages to the Anaconda Environment:
 ```sh 
     conda install pip
 ```
@@ -247,7 +247,7 @@ to the authors. See `LICENSE.md` for the full license text.
 
 Alaa Nfissi - [@LinkedIn](https://www.linkedin.com/in/alaa-nfissi/) - alaa.nfissi@mail.concordia.ca
 
-Github Link: [https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition](https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition)
+Github Link: [https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition](https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
