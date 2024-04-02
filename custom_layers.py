@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Title: Custom Layers for Speech Emotion Recognition Model
+Title: Custom Layers for Speech Emotion Recognition Model (SigWavNet)
 Author: Alaa Nfissi
 Date: March 31, 2024
 Description: This file defines custom neural network layers and attention mechanisms 
@@ -174,7 +174,7 @@ class HardThresholdAssym(nn.Module):
             + torch.sigmoid(-self.alpha * (inputs + self.thrN))
         )
     
-class LinearAttentionBlock(nn.Module):
+class SpatialAttentionBlock(nn.Module):
     
     """
     Implements a linear attention block that applies spatial attention mechanism over 1D signals.
@@ -190,7 +190,7 @@ class LinearAttentionBlock(nn.Module):
         - normalize_attn (bool): Specifies whether to normalize attention weights using softmax.
         """
         
-        super(LinearAttentionBlock, self).__init__()
+        super(SpatialAttentionBlock, self).__init__()
         self.normalize_attn = normalize_attn
         self.op = nn.Conv1d(in_channels=in_features, out_channels=1, kernel_size=1, padding=0, bias=False)
     def forward(self, l, g):

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Title: Utility Functions for Speech Emotion Recognition
+Title: Utility Functions for Speech Emotion Recognition (SigWavNet)
 Author: Alaa Nfissi
 Date: March 31, 2024
 Description: This file contains utility functions for preprocessing, loading data, and 

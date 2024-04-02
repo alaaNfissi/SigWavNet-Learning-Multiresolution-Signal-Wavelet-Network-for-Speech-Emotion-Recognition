@@ -302,10 +302,10 @@ def main(num_samples=10, max_num_epochs=10, gpus_per_trial=1):
     config = {
         "n_input": tune.choice([1]),
         "hidden_dim": tune.choice([32, 64, 128]),
-        "n_layers": tune.choice([3, 6]),
+        "n_layers": tune.choice([3, 6, 9]),
         "n_output": tune.choice([len(emotionclasses)]),
         "weight_decay": tune.loguniform(1e-6, 1e-2),
-        'level': tune.choice([4, 5, 6]),
+        'level': tune.choice([4, 5, 6, 7, 8, 9, 10]),
         'trainHT': tune.choice([True, False]),
         'initHT': tune.choice([0.5, 0.6, 0.7, 0.8, 0.9, 1]),
         'kernTrainable': tune.choice([True, False]),
@@ -313,7 +313,7 @@ def main(num_samples=10, max_num_epochs=10, gpus_per_trial=1):
         'alpha': tune.choice([10, 11, 12, 13, 14, 15]),
         'mode': tune.choice(['CQF', 'PerLayer', 'PerFilter']),
         "lr": tune.loguniform(1e-4, 1e-1),
-        "batch_size": tune.grid_search([2, 4, 8]),
+        "batch_size": tune.grid_search([2, 4, 8, 16, 32]),
         "num_splits": tune.choice([10])
     }
     

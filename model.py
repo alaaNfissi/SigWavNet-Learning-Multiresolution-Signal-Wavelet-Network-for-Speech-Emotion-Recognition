@@ -56,7 +56,7 @@ class CNN1DSABiGRUTA(nn.Module):
         self.relu1_2 = nn.LeakyReLU()
         
         # Define the spatial attention layer
-        self.spatialAttn= LinearAttentionBlock(in_features=2*n_channel, normalize_attn=self.normalize_attn)
+        self.spatialAttn= SpatialAttentionBlock(in_features=2*n_channel, normalize_attn=self.normalize_attn)
         
         self.reluAtt1 = nn.LeakyReLU()
         
