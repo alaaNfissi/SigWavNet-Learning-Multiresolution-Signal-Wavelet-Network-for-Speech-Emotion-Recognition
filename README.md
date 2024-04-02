@@ -169,7 +169,7 @@ Executing text cells does nothing and executing code cells runs the code and pro
 To execute the whole notebook, run all cells in order.
  
 3. After generating the needed `csv` files `IEMOCAP_dataset.csv` and `EMO_DB_dataset.csv`, go to your terminal where the `ser-env` environment was
-  activated go to the project folder and run the python file `main.py` as follows:
+  activated go to the project folder and run the python script `main.py` as follows:
 ```sh  
 python main.py
 ``` 
