@@ -114,8 +114,7 @@ or [download a zip archive](https://github.com/alaaNfissi/SigWavNet-Learning-Mul
 
 ### Dependencies
 
-<p align="center">
-
+<p align="justify">
 You'll need a working Python environment to run the code.
 The recommended way to set up your environment is through the
 [Anaconda Python distribution](https://www.anaconda.com/download/) which
@@ -143,13 +142,11 @@ Install all required dependencies in it:
 ```sh
     pip install -r requirements.txt
 ```
-  
 </p>
 
 ### Reproducing the results
 
 <p align="center">  
-  
 1. First, you need to download IEMOCAP and EMO-DB datasets:
   * [IEMOCAP official website](https://sail.usc.edu/iemocap/)
   * [EMO-DB official website](http://www.emodb.bilderbar.info/download/)
@@ -167,14 +164,12 @@ The notebook is divided into cells (some have text while others have code).
 Each cell can be executed using `Shift + Enter`.
 Executing text cells does nothing and executing code cells runs the code and produces its output.
 To execute the whole notebook, run all cells in order.
- 
 3. After generating the needed `csv` files `IEMOCAP_dataset.csv` and `EMO_DB_dataset.csv`, go to your terminal where the `ser-env` environment was
   activated go to the project folder and run the python script `main.py` as follows:
 ```sh  
 python main.py
 ``` 
   _You can do the same thing for the EMO-DB dataset by changing the dataset csv file to `EMO_DB_dataset.csv`._
-
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -182,24 +177,18 @@ python main.py
 ## Results
 
 ### On IEMOCAP dataset
-<p align="center">  
-  
+<p align="justify">  
 The trials showcase the proficiency of the SigWavNet model in recognizing diverse emotional expressions from the IEMOCAP dataset. This model achieves notable accuracy in distinguishing between various emotions, as indicated by its performance metrics—precision, recall, and F1-score—across different emotional categories. Specifically, SigWavNet performs exceptionally well in identifying 'Neutral' emotions, achieving a high precision rate of 97% and a recall rate of 93% (refer to the paper). This underscores the model's strength in accurately pinpointing this particular emotional state. The confusion matrix in SigWavNet confusion matrix figure describes class-wise test results on IEMOCAP. 
-
 </p>
-
 SigWavNet confusion matrix on IEMOCAP            | 
 :-----------------------------------------------------------------:|
 ![sigwavnet_cfm_iemocap](figures/iemocap_cfm.png)  |
 
 
 ### On EMO-DB dataset
-<p align="center"> 
-  
+<p align="justify"> 
 The evaluation of SigWavNet on the EMO-DB dataset provides a comprehensive analysis of its ability to distinguish between various emotional states, as demonstrated by its commendable precision, recall, and F1-score metrics for different emotions. Particularly notable is the model's performance on 'Anger', where it achieves an exceptional precision rate of 100%, reflecting its precision in predicting this specific emotion. Alongside a recall rate of 92.3%, SigWavNet effectively identifies the majority of 'Anger' instances, leading to a harmoniously balanced F1-score of 96% (refer to the paper). The confusion matrix in SigWavNet confusion matrix figure describes class-wise test results on EMO-DB.  
-
 </p>
-
 SigWavNet confusion matrix on EMO-DB            | 
 :-----------------------------------------------------------------:|
 ![sigwavnet_cfm_emodb](figures/emodb_cfm.png)  |
@@ -209,7 +198,6 @@ SigWavNet confusion matrix on EMO-DB            |
 <p align="center">
   
 _For more detailed experiments and results you can read the paper._
-  
 </p>
 
 
