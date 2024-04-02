@@ -96,12 +96,11 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 <p align="justify">
-To begin our experiments, we first ensured that our signal has a sampling rate of 16 KHz and is mono-channel in order to standardise our experimental data format.
-Each dataset is segmented as follows: 80\% for training, 10\% for validation, and 10\% for testing based on stratified random sampling which entails categorising the whole population into homogenous groupings known as strata. Random samples are then drawn from each stratum unlike basic random sampling which considers all members of a population as equal. With an equal possibility of being sampled, it allows us to generate a sample population that best represents the total population being studied as it is used to emphasise distinctions across groups in a population. A Grid search is then used to find the appropriate hyperparameters. Some hyperparameter optimization approaches are known as "scheduling algorithms". These Trial Schedulers have the authority to terminate troublesome trials early, halt trials, clone trials, and alter trial hyperparameters while they are still running. Thus, the Asynchronous Successive Halving algorithm (ASHA) was picked because of its high performance.
-  
-We examined four model architectures: CNN-3-GRU, CNN-5-GRU, CNN-11-GRU, and CNN-18-GRU. Each model is run for 100 epochs until it converges using Adam. As we are not using any pretrained model, the weights of each model are started from scratch. The receptive field of our first CNN layer is equal to <em>160</em> which corresponds to <em>(sampling rate / 100)</em> in our case to cover a <em>10-millisecond</em> time span, to be comparable to the window size for many MFCC computations since we transformed all our data to <em>16 KHz</em> representation. All source code used to generate the results and figures in the paper are in
-the `CNN-n-GRU_IEMOCAP` and `CNN-n-GRU_TESS` folders. The calculations and figure generation are all run inside [Jupyter notebooks](http://jupyter.org/).
-The data preprocessing used in this study is provided in `Data_exploration` folder. See the `README.md` files in each directory for a full description.  
+To ensure consistency and compatibility across our datasets, we first convert all audio signals to a uniform 16 KHz sampling rate and mono-channel format. We then divide each dataset into two primary subsets: 90% for training and validation purposes, and the remaining 10% designated for testing as unseen data. For the training and validation segments, we implement a 10-fold cross-validation method. This partitioning and the allocation within the cross-validation folds leverage stratified random sampling, a method that organizes the dataset into homogenous strata based on emotional categories. Unlike basic random sampling, this approach guarantees a proportional representation of each class, leading to a more equitable and representative dataset division.
+
+In the quest to identify optimal hyperparameters for our model, we utilize a grid search strategy. Hyperparameter tuning can be approached in several ways, including the use of scheduling algorithms. These schedulers can efficiently manage trials by early termination of less promising ones, as well as pausing, duplicating, or modifying the hyperparameters of ongoing trials. For its effectiveness and performance, we have selected the Asynchronous Successive Halving Algorithm (ASHA) as our optimization technique.
+
+The data preprocessing used in this study is provided in the `Data_exploration` folder.  
 </p>
 
 ### Getting the code
@@ -132,7 +131,7 @@ Run the following command to create an `ser-env` environment to create a separat
 ```sh 
     conda create --name ser-env
 ```
-Activate the environment, this will enable the it for your current terminal session. Any subsequent commands will use software that is installed in the environment:
+Activate the environment, this will enable it for your current terminal session. Any subsequent commands will use software that is installed in the environment:
 ```sh 
     conda activate ser-env
  ``` 
@@ -151,69 +150,59 @@ Install all required dependencies in it:
 
 <p align="center">  
   
-1. First, you need to download IEMOCAP and TESS datasets:
+1. First, you need to download IEMOCAP and EMO-DB datasets:
   * [IEMOCAP official website](https://sail.usc.edu/iemocap/)
-  * [TESS official website](https://tspace.library.utoronto.ca/handle/1807/24487)
+  * [EMO-DB official website](http://www.emodb.bilderbar.info/download/)
   
-2. To be able to explore the data you need to execute the Jupyter notebook that prepares the `csv` files needed for the experiments.
+2. To be able to explore the data you need to execute the Jupyter Notebook that prepares the `csv` files needed for the experiments.
 To do this, you must first start the notebook server by going into the
 repository top level and running:
 ```sh 
     jupyter notebook
 ```
 This will start the server and open your default web browser to the Jupyter
-interface. In the page, go into the `Data_exploration` folder and select the
-`data_exploration.ipynb` notebook to view/run. Make sure to specify the correct datasets paths on your own machine as described in the notebook.
-The notebook is divided into cells (some have text while other have code).
+interface. On the page, go into the `Data_exploration` folder and select the
+`data_exploration.ipynb` notebook to view/run. Make sure to specify the correct dataset paths on your machine as described in the notebook.
+The notebook is divided into cells (some have text while others have code).
 Each cell can be executed using `Shift + Enter`.
-Executing text cells does nothing and executing code cells runs the code
-and produces it's output.
+Executing text cells does nothing and executing code cells runs the code and produces its output.
 To execute the whole notebook, run all cells in order.
  
-3. After generating the needed `csv` files `IEMOCAP_dataset.csv` and `TESS_dataset.csv`, go to your terminal where the `ser-env` environment was
-  activated and go to `CNN-n-GRU_IEMOCAP` folder and choose one of the python files to run the experiment that you want. For example:
+3. After generating the needed `csv` files `IEMOCAP_dataset.csv` and `EMO_DB_dataset.csv`, go to your terminal where the `ser-env` environment was
+  activated go to the project folder and run the python file `main.py` as follows:
 ```sh  
-python iemocap_cnn_3_gru.py
+python main.py
 ``` 
-  _You can do the same thing for the TESS dataset by going to the `CNN-n-GRU_IEMOCAP` and runing one of the python files._
+  _You can do the same thing for the EMO-DB dataset by changing the dataset csv file to `EMO_DB_dataset.csv`._
 
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Results
-<p align="center">  
-  
-We implemented the proposed architecture CNN-n-GRU in four versions, with n = 3, 5, 11, and 18.
-  
-</p>
 
 ### On IEMOCAP dataset
 <p align="center">  
   
-Amoung our model’s four versions performance, the best architecture of our model is CNN-18-GRU as it achieves the highest accuracy and F1-score, 
-where it reaches 81.3% accuracy and 80.9% F1-score on the IEMOCAP dataset which is better compared to the state of-the-art methods.
-The CNN-18-GRU training and validation accuracy over epochs figure shows the evolution of training and validation accuracy of the CNN-18-GRU over 100 epochs. The confusion matrix in CNN-18-GRU confusion matrix figure describes class-wise test results of the CNN18-GRU. 
+The trials showcase the proficiency of the SigWavNet model in recognizing diverse emotional expressions from the IEMOCAP dataset. This model achieves notable accuracy in distinguishing between various emotions, as indicated by its performance metrics—precision, recall, and F1-score—across different emotional categories. Specifically, SigWavNet performs exceptionally well in identifying 'Neutral' emotions, achieving a high precision rate of 97% and a recall rate of 93% (refer to the paper). This underscores the model's strength in accurately pinpointing this particular emotional state. The confusion matrix in SigWavNet confusion matrix figure describes class-wise test results on IEMOCAP. 
 
 </p>
 
-CNN-18-GRU training and validation accuracy over epochs            |  CNN-18-GRU confusion matrix
-:-----------------------------------------------------------------:|:-----------------------------:
-![iemocap_cnn18gru_acc](images/iemocap_cnn18gru_acc.png)  |  ![iemocap_cnn18gru_confusion_matrix_1](images/iemocap_cnn18gru_confusion_matrix_1.png)
+SigWavNet confusion matrix on IEMOCAP            | 
+:-----------------------------------------------------------------:|
+![sigwavnet_cfm_iemocap](figures/iemocap_cfm.png)  |
 
 
-### On TESS dataset
+### On EMO-DB dataset
 <p align="center"> 
   
-Amoung our model’s four versions performance, the best architecture of our model is CNN-18-GRU as it achieves the highest accuracy and F1-score, 
-where it reaches  99.2% accuracy and 99% F1-score on the TESS dataset which is better compared to the state of-the-art methods.
-The CNN-18-GRU training and validation accuracy over epochs figure shows the evolution of training and validation accuracy of the CNN-18-GRU over 100 epochs. The confusion matrix in CNN-18-GRU confusion matrix figure describes class-wise test results of the CNN18-GRU.  
+The evaluation of SigWavNet on the EMO-DB dataset provides a comprehensive analysis of its ability to distinguish between various emotional states, as demonstrated by its commendable precision, recall, and F1-score metrics for different emotions. Particularly notable is the model's performance on 'Anger', where it achieves an exceptional precision rate of 100%, reflecting its precision in predicting this specific emotion. Alongside a recall rate of 92.3%, SigWavNet effectively identifies the majority of 'Anger' instances, leading to a harmoniously balanced F1-score of 96% (refer to the paper). The confusion matrix in SigWavNet confusion matrix figure describes class-wise test results on EMO-DB.  
 
 </p>
 
-CNN-18-GRU training and validation accuracy over epochs            |  CNN-18-GRU confusion matrix
-:-----------------------------------------------------------------:|:-----------------------------:
-![cnn18gru_acc](images/cnn18gru_acc.png)  |  ![cnn18gru_confusion_matrix_1](images/cnn18gru_confusion_matrix.png)
+SigWavNet confusion matrix on EMO-DB            | 
+:-----------------------------------------------------------------:|
+![sigwavnet_cfm_emodb](figures/emodb_cfm.png)  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -258,7 +247,7 @@ to the authors. See `LICENSE.md` for the full license text.
 
 Alaa Nfissi - [@LinkedIn](https://www.linkedin.com/in/alaa-nfissi/) - alaa.nfissi@mail.concordia.ca
 
-Github Link: [https://github.com/alaaNfissi/CNN-n-GRU-for-speech-emotion-recognition](https://github.com/alaaNfissi/CNN-n-GRU-for-speech-emotion-recognition)
+Github Link: [https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition](https://github.com/alaaNfissi/SigWavNet-Fully-Deep-Learning-Multiresolution-Wavelet-Transform-for-Speech-Emotion-Recognition)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
