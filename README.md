@@ -11,7 +11,7 @@
   <h3 align="center">SigWavNet: Learning Multiresolution Signal Wavelet Network for Speech Emotion Recognition</h3>
 
   <p align="center">
-    This paper has been submitted for publication in IEEE Transactions on Affective Computing.
+    This paper has been accepted for publication in IEEE Transactions on Affective Computing.
     <br />
    </p>
    <!-- <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition"><strong>Explore the docs »</strong></a> -->
